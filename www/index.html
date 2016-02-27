@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tileshop</title>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!--[if lt IE 9]>
+      <script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+  <link rel="shortcut icon" href="">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+	<h1> Ashlar (alpha)</h1>
+	<p> (Ashlar is a work in progress. For best results, please use Chrome) </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+	<h2>editor </h2>
+	<ul class="list-unstyled">
+	  <li>
+	    <ul class="list-inline">
+	      <li>
+		<canvas id="editor" width="180" height="180"></canvas>
+	      </li>
+
+	      <li class="bg-success">
+		<h4> tile preview </h4>
+		<canvas id="modeltile" width="180" height="180"></canvas>
+	      </li>
+	     
+	      <li>
+		<ul class="list-unstyled">
+		  <li>
+		    <label for="edge-selector">Active Edge</label>
+		    <select class="form-control" name="edge-selector" id="edge-selector">
+		      
+		    </select>
+		  </li>
+		  <li>
+		    <label for="stroke">Line Width </label>
+		    <input name="stroke" id="stroke" 
+			   type="range" min="1" max="20" value="1"/>
+		  </li>
+		  
+		  <li>
+		    <label for="scale">Scale </label>
+		    <input name="scale" id="scale"
+			   type="range" min="26" max="200" step="2" value="50"/>
+		  </li>
+		  
+		  <li>
+		    <label for="rotation"> Rotation </label>
+		    <input name="rotation" id="rotation"
+	 		   type="range" min="0" max="359" step="1" value="0"/>
+		  </li>
+		</ul>
+	      </li>
+	      <li>
+		<ul class="list-unstyled">
+		  <li>
+		    <ul class="list-unstyled" id="vertex-parameters">
+		      
+		    </ul>
+		  </li>
+		  <li>
+		    <label for="tiling-class">Tiling Type</label>
+		    <select class="form-control" id="tiling-class" name="tiling-class">
+		      
+		    </select>
+		  </li>
+		</ul>
+	      </li>
+	    </ul>
+	  </li>
+	  <li>
+	    <label for="freehand-toggle">Freehand: </label>
+	    <input type="checkbox" name="freehand-toggle" id="freehand-toggle"/>
+	  </li>
+	  <li>
+	    <ul class="list-inline">
+	      <li>
+		<div class="btn btn-default" id="refresh-editor">Refresh</div> 
+	      </li>
+	      <li>
+		<div class="btn btn-default" id="undo-btn">↫</div>
+	      </li>
+	      <li>
+		<div class="btn btn-default" id="redo-btn">↬</div>
+	      </li>
+	      <li id="tiling-link">
+		
+	      </li>
+	    </ul>
+	  </li>
+  	</ul>
+      </div>
+      <div class="col-md-5">
+	<canvas id="tilecanvas" width="500" height="500"></canvas>
+	<ul class="list-inline">
+	  <li>
+	    <label for="filename">Name</label>
+	    <input name="filename" id="filename" type="text" value="tiling"/>
+	  </li>
+	  <li> <a href="#"
+		  class="btn btn-default" 
+		  id="download-button">Export As SVG</a>
+	  </li>
+	</ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+	<p> Enjoying the application? Do you have a particular use case in mind?
+	  I'd be happy to <a href="mailto:asciiascetic@gmail.com"> hear about it </a>.</p>
+      </div>
+      <div class="col-md-3">
+	<p class="text-muted" id="timestamp">Last Updated Tue Aug  5 07:50:07 CDT 2014 </p>
+      </div>
+    </div>
+  </div>
+  <!-- SCRIPTS -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- 
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	-->
+  <script src="js/lz-string.js"></script>
+  <script src="js/ashlar.js"></script>
+  <script src="js/paper.js"></script>
+  <script type="text/paperscript" src="js/tilecanvas.js" canvas="tilecanvas"></script>
+  <script src="js/main.js"></script>
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-12165915-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+
