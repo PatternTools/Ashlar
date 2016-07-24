@@ -134,6 +134,8 @@ $(document).ready(function () {
 
 
     var exportTile = function () {
+	paper.toggleActiveVis();
+	paper.updateModelTile();
 	var filename = $('#tile-filename')[0].value + '.svg';
 	var svgString = paper.modeltile.exportSVG({asString:true});
 	var blob = new Blob([svgString], {type: MIME_TYPE});
@@ -142,7 +144,9 @@ $(document).ready(function () {
 	a.href = window.URL.createObjectURL(blob);
 	document.body.appendChild(a);
 	a.click();
-	document.body.removeChild(a);	
+	document.body.removeChild(a);
+	paper.toggleActiveVis();
+	paper.updateModelTile();
     }
     
     $('#download-button').on('click', function () {

@@ -203,6 +203,14 @@ var pathToEdgePath = function () {
     });
 };
 
+var SHOW_ACTIVE = true;
+
+var toggleActiveVis = function () {
+    SHOW_ACTIVE = !SHOW_ACTIVE;
+};
+
+this.toggleActiveVis = toggleActiveVis;
+
 var updateModelTile = function (point) {
     if (!ptile) return false;
     var edgeType = ptile.getEdgeType(currentPathLabel);
@@ -244,7 +252,7 @@ var updateModelTile = function (point) {
     var p = new Group();
     for (var i = 1; i < points.length; i += 1) {
 	var p0 = new Path(points[i-1], points[i]);
-	if (i > startStop.start && i < startStop.stop) {
+	if (SHOW_ACTIVE && i > startStop.start && i < startStop.stop) {
 	    p0.strokeColor = 'red';
 	    p0.strokeWidth = 3;
 	} else {
@@ -260,6 +268,8 @@ var updateModelTile = function (point) {
     }
     modeltile.view.update();
 };
+
+this.updateModelTile = updateModelTile;
 
 var sLineEdit = function (point) {
     
