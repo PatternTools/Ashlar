@@ -55,6 +55,7 @@ this.tilecanvas = tilecanvas;
 var editor = new Project("editor");
 
 var modeltile = new Project("modeltile");
+this.modeltile = modeltile;
 
 var modeltilecenter = new Point(50,50);
 

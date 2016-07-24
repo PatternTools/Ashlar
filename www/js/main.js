@@ -78,7 +78,7 @@ $(document).ready(function () {
 
 	    var link = $('<a> here is a link to your tiling -- SHARE IT!</a>' );
 	    link.attr({
-		href: window.location.origin + "/#" + encoded
+		href: window.location.origin + window.location.pathname + "#" + encoded
 	    });
 	    $('#tiling-link').empty();
 	    $('#tiling-link').append(link);
@@ -132,8 +132,25 @@ $(document).ready(function () {
 	document.body.removeChild(a);
     };
 
+
+    var exportTile = function () {
+	var filename = $('#tile-filename')[0].value + '.svg';
+	var svgString = paper.modeltile.exportSVG({asString:true});
+	var blob = new Blob([svgString], {type: MIME_TYPE});
+	var a = document.createElement('a');
+	a.download = filename;
+	a.href = window.URL.createObjectURL(blob);
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);	
+    }
+    
     $('#download-button').on('click', function () {
 	exportData();
+    });
+
+    $('#download-tile-button').on('click', function () {
+	exportTile();
     });
 
     $('#refresh-editor').on('click', function () {

@@ -82,8 +82,21 @@
 	    </ul>
 	  </li>
 	  <li>
-	    <label for="freehand-toggle">Freehand: </label>
-	    <input type="checkbox" name="freehand-toggle" id="freehand-toggle"/>
+	    <ul class="list-inline">
+	      <li>
+		<label for="freehand-toggle">Freehand: </label>
+		<input type="checkbox" name="freehand-toggle"
+		       id="freehand-toggle"/>
+	      </li>
+	      <li>
+		<label for="tile-filename">Name This Tile</label>
+		<input name="tile-filename" id="tile-filename"
+		       type="text" value="tile"/>
+		<a href="#"
+		   class="btn btn-default"
+		   id="download-tile-button">Export Tile as SVG</a>
+	      </li>
+	    </ul>
 	  </li>
 	  <li>
 	    <ul class="list-inline">
