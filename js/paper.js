@@ -3820,9 +3820,9 @@ var Item = Base.extend(Callback, {
 	_setStyles: function(ctx) {
 		var style = this._style,
 			// fillColor = style.getFillColor(),
-			fillColor = rgb(0,0,0),
+			fillColor = rgb(0,0,0), // maybe1
 			// strokeColor = style.getStrokeColor(),
-			strokeColor = rgb(255,255,255),
+			strokeColor = rgb(255,255,255), // maybe2
 			shadowColor = style.getShadowColor();
 		if (fillColor)
 			ctx.fillStyle = fillColor.toCanvasStyle(ctx);
@@ -7162,7 +7162,7 @@ var Path = PathItem.extend({
 			if (!(state & 4)) {
 				var fillStyle = ctx.fillStyle;
 				// ctx.fillStyle = '#ffffff';
-				ctx.fillStylle = '#000000';
+				ctx.fillStyle = '#000000'; // maybe?
 				ctx.fillRect(pX - half + 1, pY - half + 1, size - 2, size - 2);
 				ctx.fillStyle = fillStyle;
 			}
