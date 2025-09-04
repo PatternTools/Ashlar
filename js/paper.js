@@ -3819,10 +3819,10 @@ var Item = Base.extend(Callback, {
 
 	_setStyles: function(ctx) {
 		var style = this._style,
-			// fillColor = style.getFillColor(),
-			fillColor = '#000000', // maybe1
-			// strokeColor = style.getStrokeColor(),
-			strokeColor = '#ffffff', // maybe2
+			fillColor = style.getFillColor(),
+			// fillColor = '#000000', // maybe1
+			strokeColor = style.getStrokeColor(),
+			// strokeColor = '#ffffff', // maybe2
 			shadowColor = style.getShadowColor();
 		if (fillColor)
 			ctx.fillStyle = fillColor.toCanvasStyle(ctx);
