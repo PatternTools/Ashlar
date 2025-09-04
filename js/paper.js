@@ -7161,7 +7161,8 @@ var Path = PathItem.extend({
 			ctx.fillRect(pX - half, pY - half, size, size);
 			if (!(state & 4)) {
 				var fillStyle = ctx.fillStyle;
-				ctx.fillStyle = '#ffffff';
+				// ctx.fillStyle = '#ffffff';
+				ctx.fillStylle = '#000000';
 				ctx.fillRect(pX - half + 1, pY - half + 1, size - 2, size - 2);
 				ctx.fillStyle = fillStyle;
 			}
