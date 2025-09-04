@@ -256,7 +256,9 @@ var updateModelTile = function (point) {
 	    p0.strokeColor = 'red';
 	    p0.strokeWidth = 3;
 	} else {
-	    p0.strokeColor = 'black';
+	    // p0.strokeColor = 'black';
+		p0.strokeColor = 'white'; // Changed from 'black' to 'white'
+    	p0.fillColor = 'black'; // Add this line for a solid black fill
 	}
 	p.addChild(p0);
     }
